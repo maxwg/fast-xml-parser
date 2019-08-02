@@ -1,3 +1,11 @@
+# fast-xml-parser-ordered
+Fast-Xml-Parser, except Tags are processed in order and returned as an array rather than object.
+
+
+
+
+-----
+
 # [fast-xml-parser](https://www.npmjs.com/package/fast-xml-parser)
 Validate XML, Parse XML to JS/JSON and vice versa, or parse XML to Nimn rapidly without C/C++ based libraries and no callback
 
