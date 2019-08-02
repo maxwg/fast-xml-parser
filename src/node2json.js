@@ -4,7 +4,7 @@ const util = require('./util');
 
 const convertToJson = function(node, options) {
   const jObj = {};
-
+  jObj.tag = node.tagname;
   //when no child node or attr is present
   if ((!node.child || util.isEmptyObject(node.child)) && (!node.attrsMap || util.isEmptyObject(node.attrsMap))) {
     return util.isExist(node.val) ? node.val : '';
@@ -19,17 +19,9 @@ const convertToJson = function(node, options) {
 
   util.merge(jObj, node.attrsMap);
 
-  const keys = Object.keys(node.child);
-  for (let index = 0; index < keys.length; index++) {
-    var tagname = keys[index];
-    if (node.child[tagname] && node.child[tagname].length > 1) {
-      jObj[tagname] = [];
-      for (var tag in node.child[tagname]) {
-        jObj[tagname].push(convertToJson(node.child[tagname][tag], options));
-      }
-    } else {
-      jObj[tagname] = convertToJson(node.child[tagname][0], options);
-    }
+  jObj.children = [];
+  for (let child of node.child) {
+        jObj.children.push(convertToJson(child, options));
   }
 
   //add value
