@@ -1,8 +1,66 @@
 # fast-xml-parser-ordered
 Fast-Xml-Parser, except Tags are processed in order and returned as an array rather than object.
 
+Example XML:
+```$xml
+<note>
+    <text>the</text>
+    <text>quick</text>
+    <b>brown</b>
+    <b>fox</b>
+    <i>jumps</b>
+    <b>
+        <i>over</i>
+    </b>
+    <text>the lazy dog</text>
+</note>
+```
 
-
+Result:
+```$json
+{  
+   "tag":"!xml",
+   "children":[  
+      {  
+         "tag":"note",
+         "children":[  
+            {  
+               "tag":"text",
+               "#text":"the"
+            },
+            {  
+               "tag":"text",
+               "#text":"quick"
+            },
+            {  
+               "tag":"b",
+               "#text":"brown"
+            },
+            {  
+               "tag":"b",
+               "#text":"fox"
+            },
+            {  
+               "tag":"i",
+               "#text":"jumps"
+            },
+            {  
+               "tag":"b",
+               "children":[  
+                  {  
+                     "tag":"i",
+                     "#text":"over"
+                  }
+               ]
+            },
+            {  
+               "tag":"text",
+               "#text":"the lazy dog"
+            }
+         ]
+      }
+   ]
+}"```
 
 -----
 

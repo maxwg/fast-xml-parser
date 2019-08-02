@@ -1,6 +1,6 @@
 {
   "name": "fast-xml-parser-ordered",
-  "version": "3.12.19",
+  "version": "3.12.20",
   "description": "Validate XML or Parse XML to JS/JSON very fast without C/C++ based libraries",
   "main": "./src/parser.js",
   "scripts": {
@@ -49,7 +49,7 @@
   "author": "Max Wang",
   "contributors": [
     {
-      "name":  "Amit Gupta ()",
+      "name":  "Amit Gupta",
       "url": "https://amitkumargupta.work/"
     },
     {
