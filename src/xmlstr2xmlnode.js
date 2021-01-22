@@ -4,7 +4,7 @@ const util = require('./util');
 const buildOptions = require('./util').buildOptions;
 const xmlNode = require('./xmlNode');
 const TagType = {OPENING: 1, CLOSING: 2, SELF: 3, CDATA: 4};
-const attrstr_regex = '((\\s*[\\w\\-._:]+(=((\'([^\']*)\')|("([^"]*)")))?)*)\\s*';
+const attrstr_regex = '((\\s*[\\w\\-._:]+\\s*(=((\'([^\']*)\')|("([^"]*)")))?)*)\\s*';
 let regx = '<((!\\[CDATA\\[([\\s\\S]*?)(]]>))|(([\\w:\\-._]*:)?([\\w:\\-._]+))'+attrstr_regex+'(\\/)?>|((\\/)(([\\w:\\-._]*:)?([\\w:\\-._]+))\\s*>))([^<]*)';
   //'<((!\\[CDATA\\[([\\s\\S]*?)(]]>))|(([\\w:\\-._]*:)?([\\w:\\-._]+))([^>]*)>|((\\/)(([\\w:\\-._]*:)?([\\w:\\-._]+))\\s*>))([^<]*)';
   
